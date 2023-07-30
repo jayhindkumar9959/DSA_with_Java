@@ -1,0 +1,26 @@
+// Define a public class named Solution
+public class Solution {
+    
+    // Define a static method named "sortZeroesAndOne" that takes an integer array "arr" as input and doesn't return anything.
+    public static void sortZeroesAndOne(int[] arr) {
+        
+        // Declare an integer variable "nextZero" and initialize it to 0. This variable will keep track of the position where the next 0 should be placed.
+        int nextZero = 0;
+        
+        // Start a loop to iterate over each element of the array (i is the index variable).
+        for (int i = 0; i < arr.length; i++) {
+            
+            // Check if the current element at index i is equal to 0.
+            if (arr[i] == 0) {
+                
+                // Swap the element at index "nextZero" with the element at index i to move the 0 to its correct position.
+                int temp = arr[nextZero];
+                arr[nextZero] = arr[i];
+                arr[i] = temp;
+                
+                // Increment "nextZero" to prepare for placing the next 0 at the correct position in the array.
+                nextZero += 1;
+            }
+        }
+    }
+}
