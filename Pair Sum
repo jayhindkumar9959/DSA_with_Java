@@ -1,0 +1,24 @@
+// Define a public class named Solution
+public class Solution {
+
+    // Define a static method named "pairSum" that takes an integer array "arr" and an integer "x" as input and returns an integer.
+    public static int pairSum(int arr[], int x) {
+        
+        // Declare an integer variable "count" and initialize it to 0. This variable will keep track of the number of pairs whose sum equals "x".
+        int count = 0;
+        
+        // Start a loop to iterate over each element of the array (i is the index variable of the first element).
+        for (int i = 0; i < arr.length; i++) {
+            // Start another loop to compare the current element with all subsequent elements in the array (j is the index variable of the second element).
+            for (int j = i + 1; j < arr.length; j++) {
+                // If the sum of the current element at index i and the subsequent element at index j is equal to "x", increment the counter "count".
+                if ((arr[i] + arr[j]) == x) {
+                    count++;
+                }
+            }
+        }
+        
+        // Return the final count of pairs whose sum equals "x".
+        return count;
+    }
+}
