@@ -1,0 +1,23 @@
+// Define a public class named Solution
+public class Solution {
+
+    // Define a static method named "sum" that takes an integer array "input" as input and returns an integer.
+    public static int sum(int[] input) {
+
+        // Get the length of the input array and store it in the variable "n".
+        int n = input.length;
+
+        // Declare variables "i" and "s" of type integer, where "i" is used as a loop counter and "s" will store the sum of the array elements.
+        int i, s = 0;
+
+        // Start a for loop to iterate over each element of the array.
+        for (i = 0; i < n; i++) {
+
+            // Add the current element of the array to the sum "s".
+            s = s + input[i];
+        }
+
+        // Return the final sum "s" after the loop has finished iterating over the entire array.
+        return s;
+    }
+}
