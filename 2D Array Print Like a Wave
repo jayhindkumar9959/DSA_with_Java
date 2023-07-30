@@ -1,0 +1,41 @@
+
+public class Solution {
+
+	public static void wavePrint(int mat[][]){
+		//Your code goes here
+		int n= mat.length; // no. of rows
+		int m = 0;
+		//if(n==0)
+		if(n != 0)
+		{
+			m = mat[0].length;
+		}
+		//int m = mat[0].length; // no. of cols.
+
+		// cols
+		for(int  j=0; j<m; j++)
+		{
+			if (j%2 ==0)
+			{
+				//rows
+				for(int i = 0; i<n;i++)
+				{
+					//System.out.println(mat [i][j]+" ");
+					System.out.print(mat[i][j] + " ");
+				}
+			}
+			else
+			{
+				// row reverse
+				for(int i= n-1; i>=0; i--)
+				{
+					//System.out.println(mat[i][j]+" ");
+					System.out.print(mat[i][j] + " ");
+				}
+			}
+			// rows reverse
+		}
+
+	}
+
+}
