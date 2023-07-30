@@ -1,0 +1,38 @@
+// Define a public class named Solution
+public class Solution {
+    
+    // Define a static method named "arrange" that takes an integer array "arr" and an integer "n" as input and doesn't return anything.
+    public static void arrange(int[] arr, int n) {
+        
+        // Initialize two integer variables "val" and "nVal" to 1 and 0, respectively.
+        int val = 1, nVal = 0;
+
+        // Check if "n" is not equal to 0 (i.e., if the array has elements).
+        if (n != 0) {
+
+            // Check if "n" is even.
+            if (n % 2 == 0)
+                nVal = n;
+            else
+                nVal = n - 1;
+
+            // Start a loop to fill the first half of the array with odd numbers starting from 1.
+            for (int j = 0; j <= (n - 1) / 2; j++) {
+                // Assign the current value "val" to the j-th element of the array "arr".
+                arr[j] = val;
+                
+                // Increment "val" by 2 for the next odd number.
+                val += 2;
+            }
+
+            // Start another loop to fill the second half of the array with even numbers in descending order.
+            for (int j = (((n - 1) / 2) + 1); j < n; j++) {
+                // Assign the current value "nVal" to the j-th element of the array "arr".
+                arr[j] = nVal;
+
+                // Decrement "nVal" by 2 for the next even number.
+                nVal -= 2;
+            }
+        }
+    }
+}
