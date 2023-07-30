@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+// Define a public class named Solution
+public class Solution {
+
+    // Method to print all possible substrings of a given string
+    public static void printSubstrings(String str){
+        
+        // Start two nested loops to iterate over each possible substring of the given string.
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j <= str.length(); j++) {
+                // Use the substring method to extract the substring from index "i" to "j-1" and print it.
+                System.out.println(str.substring(i, j));
+            }
+        }
+    }
+
+    // Main method to take user input and call the printSubstrings method
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        // Take user input for the string.
+        String str = s.nextLine();
+        
+        // Call the printSubstrings method to print all possible substrings of the given string.
+        printSubstrings(str);
+    }
+}
