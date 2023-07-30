@@ -1,0 +1,26 @@
+// Define a public class named Solution
+public class Solution {
+
+    // Define a static method named "pushZerosAtEnd" that takes an integer array "arr" as input and doesn't return anything.
+    public static void pushZerosAtEnd(int[] arr) {
+        
+        // Declare an integer variable "i" and initialize it to 0. This variable will keep track of the position where the next non-zero element should be placed.
+        int i = 0;
+        
+        // Start a loop to iterate over the array (j is the index variable).
+        for (int j = 0; j < arr.length; j++) {
+            
+            // Check if the current element at index "j" is not equal to 0 (i.e., it's a non-zero element).
+            if (arr[j] != 0) {
+                
+                // Swap the non-zero element at index "j" with the element at index "i" to move it to its correct position.
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+                
+                // Increment "i" to prepare for placing the next non-zero element at the correct position in the array.
+                i++;
+            }
+        }
+    }
+}
