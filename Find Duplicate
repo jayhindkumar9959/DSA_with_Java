@@ -1,0 +1,24 @@
+// Define a public class named Solution
+public class Solution {
+    
+    // Define a static method named "duplicateNumber" that takes an integer array "arr" as input and returns an integer.
+    public static int duplicateNumber(int arr[]) {
+        
+        // Start a loop to iterate over each element of the array (i is the index variable).
+        for (int i = 0; i < arr.length; i++) {
+            
+            // Start another loop to compare the current element with all subsequent elements in the array (j is the index variable).
+            for (int j = i + 1; j < arr.length; j++) {
+                
+                // If the current element at index i is equal to any of the subsequent elements at index j, it means a duplicate is found.
+                if (arr[i] == arr[j]) {
+                    // Return the duplicate element and exit the method.
+                    return arr[j];
+                }
+            }
+        }
+        
+        // If no duplicate is found, return -1 as per the method signature.
+        return -1;
+    }
+}
