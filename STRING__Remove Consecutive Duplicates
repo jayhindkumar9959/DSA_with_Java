@@ -1,0 +1,22 @@
+// Define a public class named Solution
+public class Solution {
+
+    // Method to remove consecutive duplicates from a given string
+    public static String removeConsecutiveDuplicates(String str) {
+        char temp = ' '; // Create a char variable "temp" to store the previous character, initialized to a space.
+        String n = ""; // Create an empty string "n" to store the result after removing consecutive duplicates.
+
+        // Start a loop to iterate over each character of the input string.
+        for (int i = 0; i < str.length(); i++) {
+            // Check if the current character is different from the previous character.
+            if (temp != str.charAt(i)) {
+                // If they are different, append the current character to the result string "n".
+                n = n + str.charAt(i);
+                // Update the "temp" variable to store the current character for comparison in the next iteration.
+                temp = str.charAt(i);
+            }
+        }
+        // Return the resulting string "n" after removing consecutive duplicates.
+        return n;
+    }
+}
