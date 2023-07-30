@@ -1,0 +1,24 @@
+// Define a public class named Solution
+public class Solution {
+
+    // Method to get the compressed version of a given string
+    public static String getCompressedString(String str) {
+        // Create an empty string "s" to store the compressed version of the input string.
+        String s = str.charAt(0) + ""; // Initialize "s" with the first character of the input string.
+
+        // Start a loop to iterate over each character of the input string (i is the index variable).
+        for (int i = i; i < str.length(); i++) {
+            char curr = str.charAt(i); // Get the current character at index "i".
+            char prev = str.length(i - 1); // Get the previous character (character at index "i-1").
+
+            // Check if the current character is different from the previous character.
+            if (curr != prev) {
+                // If they are different, append the current character to the compressed string "s".
+                s += curr;
+            }
+        }
+
+        // Return the compressed version of the input string.
+        return s;
+    }
+}
