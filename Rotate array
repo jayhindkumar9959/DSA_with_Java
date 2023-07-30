@@ -1,0 +1,22 @@
+// Define a public class named Solution
+public class Solution {
+
+    // Define a static method named "rotate" that takes an integer array "arr" and an integer "d" as input and doesn't return anything.
+    public static void rotate(int[] arr, int d) {
+        
+        // Create a new integer array "arr1" with the same length as the input array "arr".
+        int[] arr1 = new int[arr.length];
+        
+        // Start a loop to iterate over the elements of the array (i is the index variable).
+        for (int i = 0; i < arr.length; i++) {
+            // Calculate the new index where the current element should be placed after rotation, using the formula (i + d) % arr.length.
+            // The % operator ensures that the index wraps around when it exceeds the array length.
+            arr1[i] = arr[(i + d) % arr.length];
+        }
+        
+        // Copy the elements from the rotated array "arr1" back to the original array "arr".
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = arr1[i];
+        }
+    }
+}
