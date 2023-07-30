@@ -1,0 +1,41 @@
+public class Solution {
+
+    // Method to find the row or column with the largest sum in a 2D matrix.
+    public static void findLargest(int mat[][]){
+        
+        // Variables to keep track of the largest row and column sums and their corresponding indices.
+        int sum=0, largestRow=Integer.MIN_VALUE, rn=0;
+        int sum1=0, largestCol=Integer.MIN_VALUE, cn=0;
+        
+        // Loop to calculate the sum of each row and find the row with the largest sum.
+        for(int i=0; i<mat.length; i++) {
+            sum=0;
+            for(int j=0; j<mat[0].length; j++) {
+                sum += mat[i][j];
+            }
+            if(sum > largestRow) {
+                largestRow = sum;
+                rn = i;
+            }
+        }
+        
+        // Loop to calculate the sum of each column and find the column with the largest sum.
+        for(int j=0; j<mat[0].length; j++) {
+            sum1 = 0;
+            for(int i=0; i<mat.length; i++) {
+                sum1 += mat[i][j];
+            }
+            if(sum1 > largestCol) {
+                largestCol = sum1;
+                cn = j;
+            }
+        }
+        
+        // Compare the largest row sum with the largest column sum and print the result accordingly.
+        if(largestRow >= largestCol) {
+            System.out.print("row " + rn + " " + largestRow);
+        } else if(largestRow < largestCol) {
+            System.out.print("column " + cn + " " + largestCol);
+        }
+    }
+}
