@@ -1,0 +1,35 @@
+// Define a public class named Solution
+public class Solution {
+
+    // Method to find the character with the highest occurrence in the given string
+    public static char highestOccuringChar(String str) {
+        // Get the length of the input string
+        int n = str.length();
+
+        // Create an integer array "arr" to store the count of each character (ASCII 256 characters).
+        char[] arr = new char[256];
+
+        // Initialize a variable "max" to store the maximum count of characters, initialized to the count of the first character in the string.
+        int max = arr[str.charAt(0)];
+
+        // Initialize a variable "ans" to store the character with the highest occurrence, initialized to the first character in the string.
+        char ans = str.charAt(0);
+
+        // Start a loop to iterate over each character of the input string and update the count in the "arr" array.
+        for (int i = 0; i < n; i++) {
+            arr[str.charAt(i)]++;
+        }
+
+        // Start another loop to find the character with the highest occurrence in the "arr" array.
+        for (int i = 0; i < n; i++) {
+            if (arr[str.charAt(i)] > max) {
+                // If the count of the current character is greater than "max," update "max" and "ans" accordingly.
+                max = arr[str.charAt(i)];
+                ans = str.charAt(i);
+            }
+        }
+
+        // Return the character with the highest occurrence in the string.
+        return ans;
+    }
+}
