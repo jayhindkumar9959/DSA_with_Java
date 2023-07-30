@@ -1,0 +1,29 @@
+// Define a public class named Solution
+public class Solution {
+
+    // Define a static method named "insertionSort" that takes an integer array "arr" as input and doesn't return anything.
+    public static void insertionSort(int[] arr) {
+
+        // Get the length of the array and store it in the variable "n".
+        int n = arr.length;
+
+        // Start a loop to iterate over the array from the second element (i is the index variable).
+        for (int i = 1; i < n; i++) {
+
+            // Store the current index "i" minus 1 in the variable "j".
+            int j = i - 1;
+
+            // Store the value of the current element at index "i" in the variable "temp".
+            int temp = arr[i];
+
+            // Start a while loop to shift the elements that are greater than "temp" to the right.
+            while (j >= 0 && arr[j] > temp) {
+                arr[j + 1] = arr[j]; // Move the greater element one position to the right.
+                j--; // Move to the previous element to continue the comparison.
+            }
+
+            // Place the "temp" value in its correct position in the sorted part of the array.
+            arr[j + 1] = temp;
+        }
+    }
+}
