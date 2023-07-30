@@ -1,0 +1,30 @@
+// Define a public class named Solution
+public class Solution {
+    
+    // Define a static method named "findTriplet" that takes an integer array "arr" and an integer "x" as input and returns an integer.
+    public static int findTriplet(int[] arr, int x) {
+        
+        // Declare an integer variable "numberPairs" and initialize it to 0. This variable will keep track of the number of triplets whose sum equals "x".
+        int numberPairs = 0;
+        
+        // Start a loop to iterate over each element of the array (i is the index variable of the first element).
+        for (int i = 0; i < arr.length; i++) {
+            
+            // Start another loop to compare the current element with all subsequent elements in the array (j is the index variable of the second element).
+            for (int j = i + 1; j < arr.length; j++) {
+                
+                // Start another loop to compare the current element with all subsequent elements after the second element (k is the index variable of the third element).
+                for (int k = j + 1; k < arr.length; k++) {
+                    
+                    // If the sum of the current element at index i, the subsequent element at index j, and the element at index k is equal to "x", increment the counter "numberPairs".
+                    if (arr[i] + arr[j] + arr[k] == x) {
+                        numberPairs++;
+                    }
+                }
+            }
+        }
+        
+        // Return the final count of triplets whose sum equals "x".
+        return numberPairs;
+    }
+}
