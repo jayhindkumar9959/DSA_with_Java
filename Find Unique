@@ -1,0 +1,32 @@
+// Define a public class named Solution
+public class Solution {
+
+    // Define a static method named "findUnique" that takes an integer array "arr" as input and returns an integer.
+    public static int findUnique(int[] arr) {
+        
+        // Declare integer variables "i", "j", and "c".
+        int i, j, c;
+
+        // Start a loop to iterate over each element of the array.
+        for (i = 0; i < arr.length; i++) {
+            // Set the variable "c" to 0 for counting the occurrences of the current element.
+            c = 0;
+            
+            // Start another loop to compare the current element with all other elements in the array.
+            for (j = 0; j < arr.length; j++) {
+                // If the current element is equal to any other element in the array, increment the counter "c".
+                if (arr[i] == arr[j])
+                    c++;
+            }
+            
+            // If the counter "c" is 1, it means the current element is unique in the array.
+            if (c == 1) {
+                // Return the unique element and exit the method.
+                return arr[i];
+            }
+        }
+        
+        // If no unique element is found, return 0 as per the method signature.
+        return 0;
+    }
+}
