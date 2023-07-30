@@ -1,0 +1,32 @@
+public class Solution {
+
+    // Method to check if a given string is a palindrome or not (ignoring case and non-letter characters).
+    public static boolean isPalindrome(String str) {
+        int size = str.length(); // Get the length of the input string.
+        String lcs = str.toLowerCase(); // Convert the input string to lowercase.
+        int left = 0; // Initialize a pointer for the leftmost character.
+        int right = size - 1; // Initialize a pointer for the rightmost character.
+        
+        // Start a loop to compare characters from both ends of the string towards the middle.
+        while (right >= left) {
+            // Check if the characters at the current left and right positions are equal (ignoring case).
+            if (lcs.charAt(right) == lcs.charAt(left)) {
+                // Move the pointers towards the middle if the characters match.
+                right--;
+                left++;
+            } else if (!Character.isLetter(lcs.charAt(right))) {
+                // If the character at the right position is not a letter, move the right pointer towards the middle.
+                right--;
+            } else if (!Character.isLetter(lcs.charAt(left))) {
+                // If the character at the left position is not a letter, move the left pointer towards the middle.
+                left++;
+            } else {
+                // If none of the above conditions match, it means the characters are not equal, and the string is not a palindrome.
+                return false;
+            }
+        }
+        
+        // If the loop completes without returning false, it means all characters matched, and the string is a palindrome.
+        return true;
+    }
+}
